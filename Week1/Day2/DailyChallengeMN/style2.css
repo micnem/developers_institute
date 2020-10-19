@@ -1,0 +1,31 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+img {
+	width: 450px;
+	height: 300px;
+	margin: 10px;
+}
+h1{
+    font-size: xx-large;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    border: dashed blue;
+    background-color: black;
+}
+
+body{
+    background-image: url(antman1.jpg);
+
+}
+
+footer{
+    background-color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: red;
+}

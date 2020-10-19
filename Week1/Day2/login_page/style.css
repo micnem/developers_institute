@@ -1,3 +1,8 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    background-color: rgb(223, 223, 223)    ;
+}
 h1{
     display: flex;
     justify-content: center;
@@ -18,11 +23,6 @@ button{
     justify-content: center;
 }
 
-*{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
-    background-color: rgb(223, 223, 223)    ;
-}
 footer{
     display: flex;
     justify-content: center;
