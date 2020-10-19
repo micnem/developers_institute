@@ -1,0 +1,13 @@
+.boxmodel {
+	border: 5px solid #2D882D;
+}
+body {background-image: linear-gradient(to bottom, red, #f06d06);
+	text-align: center;}
+
+form{
+	color: white;
+}
+
+a:hover{
+	color: green;
+}

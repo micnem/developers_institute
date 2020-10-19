@@ -1,0 +1,19 @@
+p{
+    display: flex;
+    flex-wrap: wrap;
+}
+.difference{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.box p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
