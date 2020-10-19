@@ -1,0 +1,41 @@
+body{
+    background-image: url(antman1.jpg);
+
+}
+nav{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+    font-size: larger;
+    background-color: white;
+    opacity: 0.7;
+}
+h1{
+    font-size: xx-large;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    border: dashed blue;
+    background-color: black;
+}
+ol{
+    background-color: white;
+    opacity: 0.5;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+}
+h3{
+    background-color: white;
+    opacity: 0.5;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+}
+body p{
+    background-color: white;
+    opacity: 0.5;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+}
+footer{ 
+    background-color: white;
+    opacity: 0.5;
+}
