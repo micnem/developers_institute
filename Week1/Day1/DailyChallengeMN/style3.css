@@ -21,3 +21,12 @@ footer{
     text-align: center;
     color: red;
 }
+
+@media(max-width: 1000px){
+    .videos{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}  
+
