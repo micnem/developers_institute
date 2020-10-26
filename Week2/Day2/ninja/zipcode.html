@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input = prompt("Enter a zipcode: ", 00000);
+        var zip = input.split("");
+        var regex = /[a-z]/ig;
+        var result = regex.test(zip);
+            if(result==true){
+                console.log("letters were entered");
+            }
+            else if(zip.length == 5){
+                console.log("valid zipcode entered");
+            }
+            else{
+                console.log("The zipcode entered is not valid");
+            }
+    </script>
+</body>
+</html>

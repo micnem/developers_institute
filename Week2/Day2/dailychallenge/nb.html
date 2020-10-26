@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "Not bad at all";
+        var regex = /not/i;
+        var findnot = str.match(regex);
+        var regex2 = /bad/i;
+        var findbad = str.match(regex2);
+        console.log(findnot);
+        console.log(findbad);
+        
+        
+        
+        var result = regex.test(str)
+        if(result= true){
+            var res = str.replace("Not bad", "good");
+            console.log(res)
+        }
+        else{
+            console.log(string);
+        }
+        
+        
+    </script>
+</body>
+</html>
