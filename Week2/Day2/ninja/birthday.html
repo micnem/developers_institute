@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user1 = prompt("User1: what is your birth year?")
+        let user2 = prompt("User2: what is your birth year?")
+        age = 2020 - user1
+        console.log("User1 is " + age +"years old")
+        age2 = 2020 - user2
+        console.log("User2 is " + age2 +"years old")
+        if (age < age2){
+                console.log("in"+ ((age2%age)+2020)  + " you will be half his age")
+        }
+        else console.log("in " +((age/2)-age2+2020 ) +" you will be half his age")
+    </script>
+
+</body>
+</html>

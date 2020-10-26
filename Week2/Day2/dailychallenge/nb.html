@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        var str = "Not bad at all";
+        var str = "I'm Not not bad";
         var regex = /not/i;
         var findnot = str.match(regex);
         var regex2 = /bad/i;
@@ -19,7 +19,7 @@
         
         var result = regex.test(str)
         if(result= true){
-            var res = str.replace("Not bad", "good");
+            var res = str.toLowerCase().replace("not bad", "good");
             console.log(res)
         }
         else{
