@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
+    let n = users.length
+        if(n==0){
+            console.log("no one is online");
+        }
+        if(n==1){
+            console.log(users[0] + "is online");
+        }
+        if(n==2){
+            console.log(users[0] + " and " + users[1] +" are online");
+        }
+        if(n>2){
+            console.log(users[0] + ", " + users[1] +" and " + (n-2) + " more user(s) are online.");
+        }
+</script>
+</body>
+</html>
