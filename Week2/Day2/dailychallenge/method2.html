@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sentence = "this is not so bad";
+        let words = sentence.split(" ");
+
+        let not = words.indexOf("not");
+        let bad = words.indexOf("bad");
+        let n = bad - not
+
+        console.log(not)
+        console.log(bad)
+
+        
+
+        if (not<bad){
+            let sen = words.splice(not, n+1, "good");
+            console.log(words.join(" "))
+        }
+        else{
+            console.log(sentence)
+        }
+    </script>
+</body>
+</html>

@@ -6,8 +6,8 @@ let guestList = {
     Norman: "England",
     Sam: "Argentina"
   }
-  if(guestList[input] == undefined){
-      console.log("Welcome guest!")
+  if(input in guestList){
+    console.log("Hi! I'm  " + input + " from " + guestList[input]);
   }
-  else{console.log(guestList[input])}
+  else{console.log("Welcome guest!")}    
 
