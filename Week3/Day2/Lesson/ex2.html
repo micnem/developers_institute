@@ -1,0 +1,31 @@
+<html>
+<body>
+    <button id="jsstyle">Style</button>
+    <script>
+        let x = document.getElementById("jsstyle")
+    
+
+        x.addEventListener("click", changeStyle); 
+
+        function changeStyle() { 
+            x.style.backgroundColor = "green"
+            x.style.fontSize = "4em"
+        } 
+
+        x.addEventListener('mouseover', changeText)
+
+        function changeText(){
+            x.innerHTML = 'Magic';
+        }
+        x.addEventListener('mouseout', changeText2)
+
+        function changeText2(){
+            x.innerHTML = 'Style'
+        }
+
+        
+
+       
+    </script>
+</body>
+</html>
