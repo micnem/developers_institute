@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <script>
+
+            let div = document.createElement("div")
+            let h1 = document.createElement("h1")
+            banner.innerHTML = "The Sale Ends in 10 mins!"
+            div.appendChild(banner)
+            document.body.appendChild(div)
+            let number = 10
+            
+            function banner(){
+                    h1.innerHTML = "The sale will end in " + number -- +  " seconds"
+                    if(number<0){
+                        clearInterval(inter)
+                    }
+            }
+            let inter = setInterval(banner, 1000)
+
+
+    </script>
+</body>
+</html>

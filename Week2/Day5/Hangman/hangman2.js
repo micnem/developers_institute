@@ -64,14 +64,4 @@ else if(lives<1){
 }
 }
 
-
-
-
-
-
-
-
-
-
-
 hangman()

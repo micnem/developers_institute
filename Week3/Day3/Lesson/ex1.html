@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <script>
+        function displayBanner(){
+            let div = document.createElement("div")
+            let banner = document.createElement("h1")
+            banner.innerHTML = "The Sale Ends in 10 mins!"
+            div.appendChild(banner)
+            document.body.appendChild(div)
+
+        }
+        setTimeout(displayBanner, 2000)
+    </script>
+</body>
+</html>

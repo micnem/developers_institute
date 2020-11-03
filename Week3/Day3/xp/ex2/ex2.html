@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ex2.css">
+</head>
+<body>
+    <h2>HTML DRAG AND DROP</h2>
+
+<div id="box">
+  
+<!-- In the HTML  -->
+<div id="square1" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">Drag me!</div>
+<div id="square2">Don't Drop Here</div>
+
+<div id="square3"
+     ondrop="dragDrop(event)"
+     ondragover="allowDrop(event)"
+     ondragenter="allowEnter(event)"
+     ondragleave="allowLeave(event)">DROP HERE!
+    </div>
+  <script src = ex2.js></script>
+</body>
+</html>
