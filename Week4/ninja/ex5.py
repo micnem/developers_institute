@@ -1,21 +1,13 @@
-sen = input("Input a sentence without the letter a in it: ")
-length = len(sen)
-active = True
 newSen = ""
-if ("a" in sen):
-    active = False
-    print("sorry, your sentence has an a in it")
-
-
-while active:
-
-    newSen = input("input another sentence: ")
-    newLen = len(newSen)
-    if newLen>length:
-        hiScore = newLen
-        print("new highscore", hiScore)
+hi_score = 0
+while True:
+    sen = input("Input a sentence without the letter a in it: ")
+    if "a" in sen:
+        print("sorry, your sentence has an a in it")
+        continue
     else:
-        print("that was shorter, try again")
-        input("Input another sentence: ")
+        if len(sen)>hi_score:
+            hi_score = len(sen)
+            print(f"new high score of {hi_score}")
         
     
