@@ -1,0 +1,2 @@
+my_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed cras ornare arcu dui vivamus. Eget duis at tellus at urna condimentum mattis pellentesque. Nisi est sit amet facilisis magna. Laoreet suspendisse interdum consectetur libero id faucibus nisl. Risus pretium quam vulputate dignissim suspendisse in. Sed velit dignissim sodales ut eu. Natoque penatibus et magnis dis parturient montes nascetur."
+print (len(my_text)) 
