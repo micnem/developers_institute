@@ -1,17 +1,14 @@
-import math
+from math import sqrt
 C = 50
 H = 30
 D = []
-D = input("Input three numbers seperated by commas: ")
-print(D)
-D_ls = D.split(",")
-print(D_ls)
+numbers = input("Input three numbers seperated by commas: ").split(",")
+print(numbers)
+answers = []
 
+for number in numbers:
+    answers.append(str(round(sqrt((2*C*int(number))/H))))
 
-
-# for i in D:
-#     Q = math.sqrt((2*C*i)/H)
-
-# print(Q)
+print(",".join(answers))
 
 

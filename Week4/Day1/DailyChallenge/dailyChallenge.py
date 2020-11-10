@@ -18,3 +18,8 @@ shuffled = ''.join(random.sample(text, len(text)))
 print(f"this is your shuffled string: {shuffled}")
 # import string_utils
 # print(string_utils.shuffle(str))
+
+# multi-line approach - cleaner
+# text = list(text)
+# random.shuffle(text)
+# text = ''.join(text)

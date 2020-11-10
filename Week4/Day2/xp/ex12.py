@@ -9,7 +9,7 @@
 #         if age>3 and age <12:
 #             price += 10
 #         elif age >= 12:
-#             price += 15
+#             price += 15   
 name = ""
 group = []
 price = 0
