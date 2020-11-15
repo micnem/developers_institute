@@ -13,14 +13,8 @@ function dragDrop(event){
 function allowDrop(event){
     event.preventDefault();
 }
-// ondragenter="allowEnter(event)"
-function allowEnter(event){
-    event.target.classList.add('over');
-}
-// ondragleave="allowLeave(event)"
-function allowLeave(event) {
-    event.target.classList.remove('over');
-  }
+
+  
 //   dragStart(event)  
 function dragStart(event){
     console.log("target:",  event.target);
