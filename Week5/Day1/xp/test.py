@@ -1,18 +1,23 @@
-animals = ['Ape', 'Baboon', 'Bear', 'Cat', 'Cougar', 'Eel', 'Emu']
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-new_list = []
-for letter in alphabet:
-    sublist = []
-    for animal in animals:
-        if animal[0].lower() == letter.lower():
-            sublist.append(animal)
-    if sublist:
-        new_list.append(sublist)
-
-
-animal_dictionary = {}
-for index,animal in enumerate(new_list):
-    animal_dictionary.update({index: animal})
-print(animal_dictionary)
-
-    
+animals = ["Ape", "Cat", "Bear", "Cougar", "Baboon", "Eel", "Emu", "Bat"]
+animals = sorted(animals)
+sorted_animals = {}
+key = 1
+starting_letter = animals[0][0]   #A
+for animal in animals:
+	#check starting letter
+	if animal[0] != starting_letter:
+		key += 1
+		starting_letter = animal[0]
+	if key not in sorted_animals:
+		sorted_animals[key] = animal
+	else:  
+		if not isinstance(sorted_animals[key], list):
+			sorted_animals[key] = [sorted_animals[key]]
+		sorted_animals[key].append(animal)
+print(sorted_animals)
+# {
+# 	1: 'Ape', 
+# 	2: ['Baboon', 'Bat', 'Bear'], 
+# 	3: ['Cat', 'Cougar'], 
+# 	4: ['Eel', 'Emu']
+# }
