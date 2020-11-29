@@ -1,0 +1,35 @@
+SELECT first_name as "First Name", last_name as "Last Name" FROM employees
+
+SELECT department_id FROM employees GROUP BY department_id
+
+SELECT * FROM employees ORDER BY first_name DESC
+
+SELECT employee_id, (first_name, last_name), salary, ((salary*0.15)) as PF FROM employees
+
+SELECT employee_id, (first_name, last_name), salary FROM employees ORDER BY salary ASC
+
+SELECT sum(salary) FROM employees
+
+SELECT max(salary), min(salary) FROM employees
+
+SELECT AVG(salary) FROM employees
+
+SELECT ROUND(AVG(salary),2) FROM employees
+
+SELECT sum(employee_id) FROM employees
+
+SELECT upper(first_name) FROM employees
+
+SELECT SUBSTRING(first_name, 1, 3) FROM employees
+
+SELECT (first_name, last_name) FROM employees
+
+SELECT (first_name, last_name) as full_name, LENGTH(CONCAT(first_name,last_name)) from employees
+
+SELECT first_name FROM employees WHERE first_name LIKE '%[0-9]%'
+
+SELECT * FROM jobs LIMIT 10
+
+
+
+SELECT first_name, last_name, salary FROM employees WHERE salary>10000 AND salary<15000
