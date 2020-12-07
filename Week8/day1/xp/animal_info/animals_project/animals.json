@@ -1,0 +1,59 @@
+{
+	"animals" : [
+		{
+			"id": 1,
+			"legs": 4,
+			"weight": 70,
+			"speed": 30,
+			"family": 1
+		},
+		{
+			"id": 2,
+			"legs": 3,
+			"weight": 230,
+			"speed": 30,
+			"family": 3
+		},
+		{
+			"id": 4,
+			"legs": 1,
+			"weight": 20,
+			"speed": 30,
+			"family": 2
+		},
+		{
+			"id": 5,
+			"legs": 7,
+			"weight": 2,
+			"speed": 37986790,
+			"family": 2
+		}
+
+],
+
+
+	"family" : [
+
+			{
+			"family_id": 1,
+			"name": "mammal"
+		},
+		{
+			"family_id": 2,
+			"name": "reptile"
+		},
+		{
+			"family_id": 3,
+			"name": "insect"
+		},
+		{
+			"family_id": 4,
+			"name": "arachnid"
+		},
+		{
+			"family_id": 5,
+			"name": "amphibian"
+		}
+		]
+}
+
