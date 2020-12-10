@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1>Here is your task: </h1>
+<ul>
+<li>Title: {{task.title}}</li>
+<li>Details: {{task.details}}</li>
+<li>Done?: {{task.has_been_done}}</li>
+<li>Created on: {{task.date_creation}}</li>
+<li>Deadline: {{task.deadline_date}}</li>
+<li>Category: {{category.name}}</li>
+
+</ul>
+<a href="{% url 'done' id=task.id  %}" class="btn btn-primary" >Mark as done</a>
+<a href="{% url 'display' %}" class="btn btn-primary" >Back to Dashboard</a>
+
+
+{% endblock %}

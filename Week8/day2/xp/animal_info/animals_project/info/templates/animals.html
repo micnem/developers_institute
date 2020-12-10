@@ -19,6 +19,7 @@
     <li><a href='{% url "animal" animal.id %}'> View Animal</a></li>
     </ol>
     {%endfor%}
-    
+    {% load static %}
+        <img src="{% static '../static/fish.jpg' %}" alt="My image">    
 </body>
 </html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container-fluid mt-4">
+
+        <h1> Here are your tasks: </h1>
+        {% for item in to_do_list %}
+        
+            {% if item.has_been_done == 0 %}
+            <a href="{% url 'task' id=item.id %}"><li>{{item.title}}</li></a>
+            {% endif %}
+        {% endfor %}
+    </div>
+<a href="{% url 'add' %}" class="btn btn-primary" >Add a Task</a>
+{% endblock %}
