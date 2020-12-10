@@ -11,6 +11,7 @@
 
 {# Display a form #}
 <form action="/add/" method="post" class="form">
+<div style="padding:20px">
   {% csrf_token %}
   {% bootstrap_form form %}
   {% buttons %}
@@ -19,6 +20,7 @@
     </button>
     <a href="{% url 'display' %}" class="btn btn-primary" >Back to Dashboard</a>
   {% endbuttons %}
+</div>
 </form>
 
 

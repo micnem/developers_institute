@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Rental info:</h2>
+
+<li>Rental ID: {{rental.id}}</li>
+<li>Customer: {{rental.customer.first_name}} {{rental.customer.last_name}}</li>
+<li>Vehicle Type: {{rental.vehicle}}</li>
+<li>Vehicle ID: {{rental.vehicle.id}}</li>
+<li>Start Date: {{rental.rental_date}}</li>
+<li>Return Date: {{rental.return_date}}</li>
+
+
+<a href="{% url 'homepage' %}" class="btn btn-primary" >Go to Homepage</a>
+
+
+{% endblock %}

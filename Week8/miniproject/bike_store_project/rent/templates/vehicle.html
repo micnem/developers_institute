@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Vehicle info:</h2>
+
+<li>Vehicle ID: {{vehicle.id}}</li>
+<li>Vehicle Type: {{vehicle.vehicle_type.name}}</li>
+<li>Size: {{vehicle.size.name}}</li>
+<li>Cost: {{vehicle.real_cost}}</li>
+<li>Rented: {{vehicle.rented}}</li>
+
+
+<a href="{% url 'homepage' %}" class="btn btn-primary" >Go to Homepage</a>
+
+
+{% endblock %}

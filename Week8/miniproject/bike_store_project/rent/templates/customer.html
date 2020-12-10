@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Customer info:</h2>
+
+<li>Name: {{customer.first_name}} {{customer.last_name}}</li>
+<li>Customer ID: {{customer.id}}</li>
+<li>Email: {{customer.email}}</li>
+<li>Address: {{customer.address}}, {{customer.city}}, {{customer.country}}</li>
+<li>Phone Number: {{customer.phone_number}}</li>
+
+
+<a href="{% url 'homepage' %}" class="btn btn-primary" >Go to Homepage</a>
+<a href="{% url 'customers' %}" class="btn btn-primary" >Go to Customers</a>
+
+{% endblock %}

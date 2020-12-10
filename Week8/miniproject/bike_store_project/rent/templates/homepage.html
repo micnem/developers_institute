@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Hello, Welcome to Mental Rentals </h1>
+
+
+<a href="{% url 'add_customer' %}" class="btn btn-primary" >Add a Customer</a>
+<a href="{% url 'add_rental' %}" class="btn btn-primary" >Add a Rental</a>
+<a href="{% url 'customers' %}" class="btn btn-primary" >See Customers</a>
+<a href="{% url 'rentals' %}" class="btn btn-primary" >See Rentals</a>
+<a href="{% url 'add_vehicle' %}" class="btn btn-primary" >Add Vehicle</a>
+
+
+{% endblock %}
