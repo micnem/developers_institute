@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>Welcome to the F1 Card Trading Game</h1>  
+   
+    {% if user.is_authenticated %}
+    <h1>Hi {{user.username}}</h1>
+    <button class="btn btn-outline-light"><a href="{% url 'logout' %}">Log Out</a></button>
+    
+{% else %}
+    <a href="{% url 'login' %}"><button class="btn btn-outline-light"> Login</button></a>
+    <a href="{% url 'signup' %}"><button class="btn btn-outline-light" >Sign up</button></a>
+{% endif %}
+</div>
+  </div>
+
+
+{% endblock %}

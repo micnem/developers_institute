@@ -11,6 +11,7 @@ urlpatterns = [
     path('rent/vehicle/add', views.add_vehicle, name='add_vehicle'),
     path('rent/rental/add', views.add_rental, name='add_rental'),
     path('rent/rental/', views.rentals, name='rentals'),
-    path('rent/rental/<int:id>', views.rental, name='rental')
+    path('rent/rental/<int:id>', views.rental, name='rental'),
+    path('rent/customer_rental/<int:customer_id>', views.customer_rental, name='customer_rental')
 
 ]

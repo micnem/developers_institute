@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% include "partials/navbar.html" %}
+  <form method="POST">
+    <div style="padding:20px">
+        {% csrf_token %}
+        <h1>Add Director</h1>
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a href="{% url 'homepage' %}" class="btn btn-primary" >Go to Homepage</a>
+
+{% endblock %}

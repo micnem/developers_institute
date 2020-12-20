@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% include "partials/navbar.html" %}
+    <h1>
+        info about film:
+    </h1>
+   
+    {{film.title}}
+    {{film.release_date}}
+   
+
+{% endblock %}

@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import *
 # Create your views here.
 def homepage(request):
     return render(request, 'homepage.html')
 
+@login_required
 def customers(request):
     customers = Customer.objects.all().order_by('first_name')
     return render(request, 'customers.html', {'customers' : customers})
@@ -60,3 +62,7 @@ def rentals(request):
 def rental(request, id):
     rental = Rental.objects.get(id=id)
     return render(request, 'rental.html', {'rental' : rental})
+
+def customer_rental(request, customer_id):
+    customer_rental = Rental.objects.all().filter(customer = customer_id)
+    return render(request, 'customer_rental.html', {'customer_rental' : customer_rental})

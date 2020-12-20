@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h1>Welcome {{user.username}}</h1>
+    <button class="btn btn-success"><a href="{% url 'logout' %}">Log Out</a></button>
+    <button class="btn btn-success"><a href="{% url 'book' %}">Make a booking</a></button>
+{% else %}
+    <h1> Hello, Welcome to our Hotel! </h1>
+    <a href="{% url 'login' %}"><button class="btn btn-success"> Login</button></a>
+    <a href="{% url 'signup' %}"><button class="btn btn-success" >Sign up</button></a>
+{% endif %}
+
+
+{% endblock %}

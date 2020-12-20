@@ -1,0 +1,14 @@
+
+<div id="login-wrapper">
+    <div id="login-box">
+        <h1>This is the login page</h1>
+   
+        <form method="POST">
+            {% csrf_token %}
+            
+            {{form.as_p}}
+         <button>login</button>
+        </form>
+    </div>
+</div>
+

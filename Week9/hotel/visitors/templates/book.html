@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="login-wrapper">
+    <div id="login-box">
+        <h1>Book a stay with us:</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <!-- All this can be replaced with {{form.as_p}} -->
+            <label>Number of guests: </label>
+            <input type="text" name="" class="form-control">
+            <label>Check-in date:</label>
+            <input type="date" name="" class="form-control">
+            <br>
+            <p>
+                <button class="form-control btn btn-success">make booking</button>
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
