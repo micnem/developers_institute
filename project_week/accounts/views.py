@@ -13,8 +13,8 @@ def homepage(request):
 
 
 class SignUpView(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('register')
+    form_class = RegisterForm
+    success_url = reverse_lazy('home')
     template_name = 'registration/signup.html'
 
     def form_valid(self, form):
@@ -24,18 +24,8 @@ class SignUpView(generic.CreateView):
         login(self.request, new_user)
         return valid
 
-class Register(View):
 
-    def get(self, request):
-        return render(request, 'registration/register.html')
+def profile(request):
+    user = request.user
 
-    def post(self, request):
-
-        form = RegisterForm(request.POST)
-        
-        if form.is_valid():
-            profile = form.save(commit=False)
-            profile.account = request.user
-            profile.save()
-        return redirect('home')
-
+    return render(request, 'profile.html', {'user':user})

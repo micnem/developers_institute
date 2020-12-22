@@ -1,7 +1,8 @@
 from django.forms import ModelForm
-from .models import Player
+from .models import User
+from django.contrib.auth.forms import UserCreationForm
 
-class RegisterForm(ModelForm):
+class RegisterForm(UserCreationForm):
     class Meta:
-        model = Player
-        exclude = ['account']
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']

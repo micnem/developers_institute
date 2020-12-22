@@ -3,10 +3,14 @@
 {% block content %}
 <div class="hero-image">
     <div class="hero-text">
-        <h1>Welcome to the F1 Card Trading Game</h1>  
+        <h1>Your profile</h1>  
    
     {% if user.is_authenticated %}
-    <h1>Hi {{user.username}}</h1>
+    <li>Username: {{user.username}}</li>
+    <li>First Name: {{user.first_name}}</li>
+    <li>Last Name: {{user.last_name}}</li>
+    <li>Email: {{user.email}}</li>
+    <li>Date joined: {{user.date_joined}}</li>
     
     <a href="{% url 'view_cards' %}"><button class="btn btn-outline-light" >Your Cards</button></a>
     
