@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card-columns">
+
+       {% for card in cards %}
+    
+       <div class="card" style="width: 20rem;">
+        <img src="{{card.driver.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{card.driver.name}}</h5>
+          <p class="card-text">
+              <li>Team: {{card.driver.team.name}}</li>
+              <li>Nationality: {{card.driver.nationality}}</li>
+              <li>Championship position: {{card.driver.position}}</li>
+              <li>Points: {{card.driver.points}}</li>
+              <hr>
+              <li>Owner: {{card.owner.username}}</li>
+          
+        </p>
+
+          <a href="{% url 'offer'  card_id=card.id%}"><button card_id={{card.id}} class="trade btn btn-primary">Submit Offer</button></a>
+          
+        </div>
+      </div>
+      {% endfor %}
+      
+    <button class="btn btn-outline-dark"><a href="{% url 'home' %}">Home</a></button>
+    
+
+    
+</div>
+
+{% endblock %}

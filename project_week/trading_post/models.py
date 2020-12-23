@@ -23,7 +23,13 @@ class Team(models.Model):
 
 class Card(models.Model):
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='deck')
+    trade_status = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.driver}'
+    
+class Offer(models.Model):
+    card1 = models.ForeignKey(Card, on_delete=models.CASCADE, related_name='card_to_trade')
+    card2 = models.ForeignKey(Card, on_delete=models.CASCADE, related_name='offer_card')
+    date = models.DateField(auto_now=True)

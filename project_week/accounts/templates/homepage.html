@@ -9,6 +9,8 @@
     <h1>Hi {{user.username}}</h1>
     
     <a href="{% url 'view_cards' %}"><button class="btn btn-outline-light" >Your Cards</button></a>
+    <a href="{% url 'marketplace' %}"><button class="btn btn-outline-light" >Marketplace</button></a>
+    
     
 {% else %}
     <a href="{% url 'login' %}"><button class="btn btn-outline-light"> Login</button></a>

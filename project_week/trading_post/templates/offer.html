@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <h1>Make an offer:</h1>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="card" style="width: 20rem;">
+                <img src="{{card1.driver.image.url}}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{card1.driver.name}}</h5>
+                  <p class="card-text">
+                      <li>Team: {{card1.driver.team.name}}</li>
+                      <li>Nationality: {{card1.driver.nationality}}</li>
+                      <li>Championship position: {{card1.driver.position}}</li>
+                      <li>Points: {{card1.driver.points}}</li>
+                      <hr>
+                      <li>Owner: {{card1.owner.username}}</li>
+                </p>
+        
+                </div>
+              </div>
+
+            {{form.as_p}}
+                <button class="form-control btn btn-success">make offer</button>
+            </form>
+        <a href="{% url 'marketplace' %}"><button class="form-control btn btn-danger">Back to marketplace</button></a>
+    
+
+{% endblock %}
