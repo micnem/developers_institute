@@ -11,7 +11,7 @@ from .forms import MakeOffer
 
 def ViewCards(request):
     cards = Card.objects.filter(owner=request.user.id)
-
+  
     return render(request, 'mycards.html', {'cards':cards})
 
 def AllDrivers(request):
@@ -89,3 +89,9 @@ def AcceptOffer(request, offer_id, accepted):
 
     
     return redirect('home')
+
+
+def leaderboard(request):
+    players = Player.objects.all()
+    
+    return render(request, 'leaderboard.html', {'players':players})

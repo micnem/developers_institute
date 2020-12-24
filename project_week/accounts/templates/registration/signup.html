@@ -3,6 +3,8 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
+<div style="display:flex;justify-content:center;align-items:center;">
+  <div>
   <h2>Sign up</h2>
   {% load crispy_forms_tags %}
   <form method="post">
@@ -10,4 +12,7 @@
     {{ form|crispy }}
     <button type="submit" class="btn btn-success">Sign Up</button>
   </form>
+</div>
+</div>
 {% endblock %}
+

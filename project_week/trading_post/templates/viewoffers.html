@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+    {% if offers %}
        {% for offer in offers %}
        
         <h2> {{offer.card2.owner}} wants to trade you:</h2>
@@ -39,9 +39,14 @@
         
         <a href="{% url 'accept'  offer_id=offer.id accepted='true'%}"><button card_id={{offer.id}} class="trade btn btn-primary">Accept Offer</button></a>
         <a href="{% url 'accept'  offer_id=offer.id accepted='false'%}"><button card_id={{offer.id}} class="trade btn btn-warning">Reject Offer</button></a>
+        {% endfor %}
+      
+        {% else %}
+        <h1>You have no offers. Get trading!</h1>
+
+        {% endif %}
 
       </div>
-      {% endfor %}
       
     
 
