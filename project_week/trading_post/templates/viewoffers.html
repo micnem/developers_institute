@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+       {% for offer in offers %}
+       
+        <h2> {{offer.card2.owner}} wants to trade you:</h2>
+       <div class="card" style="width: 20rem;">
+           <img src="{{offer.card2.driver.image.url}}" class="card-img-top" alt="...">
+           <div class="card-body">
+             <h5 class="card-title">{{offer.card2.driver.name}}</h5>
+             <p class="card-text">
+                 <li>Team: {{offer.card2.driver.team.name}}</li>
+                 <li>Nationality: {{offer.card2.driver.nationality}}</li>
+                 <li>Championship position: {{offer.card2.driver.position}}</li>
+                 <li>Points: {{offer.card2.driver.points}}</li>
+                 <hr>
+                 <li>Owner: {{offer.card2.owner.username}}</li>
+             
+           </p>
+           </div>
+           <hr>
+           <h2>For:</h2>
+       <div class="card" style="width: 20rem;">
+        <img src="{{offer.card1.driver.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{offer.card1.driver.name}}</h5>
+          <p class="card-text">
+              <li>Team: {{offer.card1.driver.team.name}}</li>
+              <li>Nationality: {{offer.card1.driver.nationality}}</li>
+              <li>Championship position: {{offer.card1.driver.position}}</li>
+              <li>Points: {{offer.card1.driver.points}}</li>
+              <hr>
+              <li>Owner: {{offer.card1.owner.username}}</li>
+          
+        </p>
+
+
+        <a href="{% url 'accept'  offer_id=offer.id%}"><button card_id={{offer.id}} class="trade btn btn-primary">Accept Offer</button></a>
+          
+
+      </div>
+      {% endfor %}
+      
+    
+
+
+{% endblock %}

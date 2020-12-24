@@ -7,7 +7,8 @@ from accounts.models import Player
 from termcolor import cprint
 import json
 from .forms import MakeOffer
-# Create your views here.
+
+
 def ViewCards(request):
     cards = Card.objects.filter(owner=request.user.id)
 
@@ -40,20 +41,45 @@ def trade(request):
 
 
 def marketplace(request):
-    cards = Card.objects.filter(trade_status = True)
-
+    cards = Card.objects.filter(trade_status = True).exclude(owner=request.user.id)
     return render(request, 'market.html', {'cards':cards})
 
 
 def offer(request, card_id):
+    if not request.user.is_authenticated:
+        return redirect('login')
     card1 = Card.objects.get(id=card_id)
-
     form = MakeOffer()
     form.fields['card2'].queryset = request.user.deck.all()
     if request.method == "POST":
         form = MakeOffer(request.POST)
         if form.is_valid():
-            form.save()
+            offer = form.save(commit=False)
+            offer.card1 = card1 
+            offer.save()
             return redirect('marketplace')
     return render(request, 'offer.html', {'form':form, 'card1':card1})
 
+
+
+def ViewOffers(request):
+    offers = Offer.objects.filter(card1__owner = request.user)
+    
+    return render(request, 'viewoffers.html', {'offers':offers})
+
+
+def AcceptOffer(request, offer_id):
+    offer = Offer.objects.get(id=offer_id)
+    card1 = Card.objects.get(pk=offer.card1_id)
+    card2 = Card.objects.get(pk=offer.card2_id)
+
+    owner1 = card1.owner
+    owner2 = card2.owner
+
+    card1.owner = owner2
+    card1.trade_status = False
+    card2.owner = owner1
+    card1.save()
+    card2.save()
+    
+    return redirect('home')
