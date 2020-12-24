@@ -8,5 +8,5 @@ urlpatterns = [
     path('marketplace/', marketplace, name='marketplace'),
     path('offer/<int:card_id>', offer, name='offer'),
     path('viewoffers/', ViewOffers, name='viewoffers'),
-    path('accept/<int:offer_id>', AcceptOffer, name='accept')
+    path('accept/<int:offer_id>/<slug:accepted>', AcceptOffer, name='accept')
 ]

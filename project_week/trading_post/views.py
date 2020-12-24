@@ -42,7 +42,8 @@ def trade(request):
 
 def marketplace(request):
     cards = Card.objects.filter(trade_status = True).exclude(owner=request.user.id)
-    return render(request, 'market.html', {'cards':cards})
+    user_deck = request.user.deck.all()
+    return render(request, 'market.html', {'cards':cards, 'user_deck':user_deck})
 
 
 def offer(request, card_id):
@@ -63,23 +64,28 @@ def offer(request, card_id):
 
 
 def ViewOffers(request):
-    offers = Offer.objects.filter(card1__owner = request.user)
+    offers = Offer.objects.filter(card1__owner = request.user).exclude(card2__owner = request.user).exclude(active=False)
     
     return render(request, 'viewoffers.html', {'offers':offers})
 
 
-def AcceptOffer(request, offer_id):
+def AcceptOffer(request, offer_id, accepted):
     offer = Offer.objects.get(id=offer_id)
     card1 = Card.objects.get(pk=offer.card1_id)
     card2 = Card.objects.get(pk=offer.card2_id)
-
     owner1 = card1.owner
     owner2 = card2.owner
+    if accepted == 'true':
+        card1.owner = owner2
+        card1.trade_status = False
+        card2.owner = owner1
+        card1.save()
+        card2.save()   
+    else:
+        offer.active = False
+        offer.save()
+        print('offer rejected')
+        return redirect('viewoffers')
 
-    card1.owner = owner2
-    card1.trade_status = False
-    card2.owner = owner1
-    card1.save()
-    card2.save()
     
     return redirect('home')

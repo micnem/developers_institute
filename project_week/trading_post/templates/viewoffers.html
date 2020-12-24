@@ -36,8 +36,9 @@
         </p>
 
 
-        <a href="{% url 'accept'  offer_id=offer.id%}"><button card_id={{offer.id}} class="trade btn btn-primary">Accept Offer</button></a>
-          
+        
+        <a href="{% url 'accept'  offer_id=offer.id accepted='true'%}"><button card_id={{offer.id}} class="trade btn btn-primary">Accept Offer</button></a>
+        <a href="{% url 'accept'  offer_id=offer.id accepted='false'%}"><button card_id={{offer.id}} class="trade btn btn-warning">Reject Offer</button></a>
 
       </div>
       {% endfor %}

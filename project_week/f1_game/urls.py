@@ -18,11 +18,13 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 from . import settings
 from django.conf.urls.static import static
+from machina import urls as machina_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
     path('trade/', include('trading_post.urls')),
+    path('forum/', include(machina_urls))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

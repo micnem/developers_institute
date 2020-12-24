@@ -32,4 +32,5 @@ class Card(models.Model):
 class Offer(models.Model):
     card1 = models.ForeignKey(Card, on_delete=models.CASCADE, related_name='card_to_trade')
     card2 = models.ForeignKey(Card, on_delete=models.CASCADE, related_name='offer_card')
+    active = models.BooleanField(default=True)
     date = models.DateField(auto_now=True)
