@@ -20,9 +20,6 @@ def seed_drivers(drivers_list):
     return
 
 
-def add_rarity():
-    pass
-
 def add_ids(drivers_list):
     for driver in drivers_list:
 
