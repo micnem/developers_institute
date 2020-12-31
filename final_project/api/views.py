@@ -62,6 +62,8 @@ class JoinRoom(APIView):
     lookup_url_kwarg = 'code'
 
     def post(self, request, format=None):
+        profile_exists = Profile.objects.filter(user=request.user).exists()
+        
         if not self.request.session.exists(self.request.session.session_key):
             self.request.session.create()
         
@@ -73,6 +75,7 @@ class JoinRoom(APIView):
             if room_result.exists():
                 room = room_result[0]
                 self.request.session['room_code'] = code
+                
                 return Response({'message':'welcome to your room!'}, status=status.HTTP_200_OK)
     
 
